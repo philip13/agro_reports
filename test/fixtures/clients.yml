@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+felipe:
+  first_name: 'Felipe J'
+  last_name: 'Cuevas C'
+  email: 'email@email.com'
+  phone: '123-45-35577'
+
+two:
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  phone: MyString

@@ -19,7 +19,6 @@ class ClientTest < ActiveSupport::TestCase
 
   test 'invalid without email' do
     @client.email = nil
-    puts " @client.errors = #{ @client.errors[:email].inspect}"
     refute @client.valid?, 'Client is valid without email'
     assert_not_nil @client.errors[:email], 'no validation error for email'
   end

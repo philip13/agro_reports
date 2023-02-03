@@ -1,0 +1,16 @@
+current directory: /Users/PhilipHome/Projects/porfolio/agro_reports/vendor/bundle/ruby/3.1.0/gems/debug-1.7.1/ext/debug
+/Users/PhilipHome/.rvm/rubies/ruby-3.1.1/bin/ruby -I /Users/PhilipHome/.rvm/rubies/ruby-3.1.1/lib/ruby/3.1.0 -r ./siteconf20230202-5482-8bf1yf.rb extconf.rb
+creating Makefile
+
+current directory: /Users/PhilipHome/Projects/porfolio/agro_reports/vendor/bundle/ruby/3.1.0/gems/debug-1.7.1/ext/debug
+make DESTDIR\= clean
+
+current directory: /Users/PhilipHome/Projects/porfolio/agro_reports/vendor/bundle/ruby/3.1.0/gems/debug-1.7.1/ext/debug
+make DESTDIR\=
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.bundle
+
+current directory: /Users/PhilipHome/Projects/porfolio/agro_reports/vendor/bundle/ruby/3.1.0/gems/debug-1.7.1/ext/debug
+make DESTDIR\= install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 debug.bundle ./.gem.20230202-5482-xfomzb/debug

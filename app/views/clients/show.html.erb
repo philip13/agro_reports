@@ -1,1 +1,11 @@
-<h1>Show Client</h1>
+<% flash.each do |type, msg| %>
+  <div class="flash-msg <%= type %> inline-block bg-green-400 py-1 px-10">
+    <%= msg %><br/>
+  </div>
+<% end %>
+
+<h1  class="title">Show Client</h1>
+
+
+<%= link_to 'Back', clients_url, class: 'btn-sm-gray'%>
+

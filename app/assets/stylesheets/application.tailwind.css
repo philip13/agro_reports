@@ -2,12 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
 
-@layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
-  }
+.title {
+  @apply font-semibold text-4xl;
 }
 
-*/
+.clients {
+  @apply p-10 grid grid-cols-4 gap-5;
+}
+
+.client {
+  @apply p-4 rounded-md border border-gray-300 
+  bg-gray-100 shadow-sm;
+}
+
+.client .full-name, .client .email, .client .phone {
+  @apply text-center p-1;
+}
+
+.client .acction-btns {
+  @apply px-1 pt-4 pb-2 grid justify-items-center grid-cols-3;
+}
+
+.btn-xs-gray {
+  @apply bg-gray-200 text-gray-700 rounded-full px-3 py-1 text-xs font-light  mr-2 mb-2;
+}
+
+.btn-xs-blue {
+  @apply bg-blue-600 hover:bg-blue-300 text-white rounded-full px-3 py-1 text-xs font-light  mr-2 mb-2;
+}
+
+.btn-xs-red {
+  @apply bg-red-500 text-white rounded-full px-3 py-1 text-xs font-light  mr-2 mb-2;
+}
+
+.btn-lg-blue {
+  @apply rounded-xl py-3 px-5 bg-blue-600 text-white block font-medium;
+}

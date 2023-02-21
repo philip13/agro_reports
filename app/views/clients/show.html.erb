@@ -4,8 +4,14 @@
   </div>
 <% end %>
 
-<h1  class="title">Show Client</h1>
+<div class="w-full">
+  <div class="flex justify-around items-center">
+    <h1  class="title">Show Client</h1>
+    <div class="acction-btns">
+      <%= link_to 'Back', clients_url, class: 'btn-xs-gray'%>
+      <%= link_to 'Edit', @client, class: 'btn-xs-blue'%>
+    </div>
+  </div>
+</div>
 
-
-<%= link_to 'Back', clients_url, class: 'btn-sm-gray'%>
 

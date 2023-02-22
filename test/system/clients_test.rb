@@ -27,4 +27,18 @@ class ClientTest < ApplicationSystemTestCase
     assert_text 'Client was sucessfully created'
     click_on 'Back'
   end
+
+  test 'should update Client' do
+    visit client_url(@client)
+    click_on 'Edit'
+
+    fill_in 'First name', with: @client.first_name
+    fill_in 'Last name', with: @client.last_name
+    fill_in 'Email', with: @client.email
+    fill_in 'Phone', with: @client.phone
+    click_on 'Update Client'
+
+    assert_text 'Client was successfully update'
+    click_on 'Back'
+  end
 end

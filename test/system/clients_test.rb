@@ -41,4 +41,11 @@ class ClientTest < ApplicationSystemTestCase
     assert_text 'Client was successfully update'
     click_on 'Back'
   end
+
+  test 'should destroy Client' do
+    visit clients_url
+    click_on 'Destroy', match: :first
+
+    assert_text 'Client was successfully destroy'
+  end
 end

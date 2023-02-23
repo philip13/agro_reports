@@ -5,10 +5,6 @@ class ClientTest < ApplicationSystemTestCase
     @client = clients(:felipe)
   end
 
-  teardown do
-    Rails.cache.clear
-  end
-
   test 'visiting the index' do
     visit clients_url
     assert_selector 'h1', text: 'Clients'

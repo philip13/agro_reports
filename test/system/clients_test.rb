@@ -46,6 +46,6 @@ class ClientTest < ApplicationSystemTestCase
     visit clients_url
     click_on 'Destroy', match: :first
 
-    assert_text 'Client was successfully destroy'
+    assert_text 'Client was successfully deleted'
   end
 end

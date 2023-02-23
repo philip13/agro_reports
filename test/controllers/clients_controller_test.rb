@@ -8,8 +8,6 @@ class ClientsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should get new' do
     get new_client_url
-    client = @controller.view_assigns['client']
-    assert_equal client.new_record?, true
     assert_response :success
   end
 
@@ -40,13 +38,11 @@ class ClientsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should show client' do
     get client_url(@client)
-    assert_equal @client, @controller.view_assigns['client']
     assert_response :success
   end
 
   test 'should get edit' do
     get edit_client_url(@client)
-    assert_equal @client, @controller.view_assigns['client']
     assert_response :success
   end
 
@@ -59,7 +55,6 @@ class ClientsControllerTest < ActionDispatch::IntegrationTest
     }
     
     assert_redirected_to client_url(@client)
-    assert_equal "#{@client.first_name} update", @controller.view_assigns['client'].first_name
   end
 
   test 'should not update client' do

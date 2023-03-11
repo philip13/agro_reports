@@ -45,3 +45,7 @@ Run all test:
 
 Run only one file test:
 `$ rails test test/models/article_test.rb`
+
+## Rubocop and Standard Rb 
+Ruby style guide, linter, and formatter
+`bundle exec rubocop -A `

@@ -8,18 +8,25 @@
 # You can also reference a tag or branch, but the action may change without warning.
 
 name: Ruby
-
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-
 jobs:
-  test:
-
+  lint:
     runs-on: ubuntu-latest
-
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install Ruby and gems
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: Lint Ruby files
+        run: bundle exec rubocop
+  tests:
+    runs-on: ubuntu-latest
     services:
       # Label used to access the service container
       postgres:
@@ -37,7 +44,6 @@ jobs:
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
-
     env:
       RAILS_ENV: test
       DATABASE_URL: "postgres://postgres:password@localhost:5432/agro_reports_test"
@@ -46,7 +52,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1.1'
+          bundler-cache: true
       - name: Install dependencies
         run: bundle install
       - name: Run tests

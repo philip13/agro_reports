@@ -1,0 +1,13 @@
+require:
+  - standard
+
+inherit_gem:
+  standard: config/base.yml
+  rubocop-rails_config: config/rails.yml
+
+AllCops:
+  Exclude:
+    - vendor/**/*
+
+Layout/IndentationConsistency:
+  EnforcedStyle: indented_internal_methods

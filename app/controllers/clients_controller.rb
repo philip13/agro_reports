@@ -27,7 +27,7 @@ class ClientsController < ApplicationController
 
   def update
     if @client.update(client_params)
-      redirect_to @client, notice: 'Client was successfully update'
+      redirect_to @client, notice: "Client was successfully update"
     else
       render :edit, status: :unprocessable_entity
     end
@@ -35,7 +35,7 @@ class ClientsController < ApplicationController
 
   def destroy
     @client.destroy
-    redirect_to clients_url, status: :see_other, alert: 'Client was successfully deleted'
+    redirect_to clients_url, status: :see_other, alert: "Client was successfully deleted"
   end
 
   private

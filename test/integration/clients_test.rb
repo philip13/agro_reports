@@ -5,8 +5,8 @@ class ClientsTest < ActionDispatch::IntegrationTest
     get "/clients"
 
     assert_select "h1", "Clients"
-    assert_select ".clients" do
-      assert_select ".client", Client.count
+    assert_select "tbody" do
+      assert_select "tr", Client.count
     end
   end
 

@@ -1,9 +1,31 @@
-<div class="w-full">
-  <div class="flex justify-around items-center">
-    <h1  class="title">Show Client</h1>
-    <div class="acction-btns">
-      <%= link_to 'Back', clients_url, class: 'btn-xs-gray'%>
-      <%= link_to 'Edit', edit_client_url( @client ), class: 'btn-xs-blue'%>
+<div>
+  <h3 class="text-3xl font-semibold text-gray-700">Client Details</h3>
+  <div class="mt-4 mb-3">
+    <%= link_to 'Back', clients_url, class: 'inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-white bg-blue-500 hover:bg-blue-500 rounded-full mr-2 mb-2'%>
+
+    <div class="flex justify-around items-center">
+      <div class="max-w-sm w-3/5 mt-6 overflow-hidden bg-white rounded shadow-lg">
+        <div class="px-6 py-4">
+          <div class="mb-2 text-xl font-bold text-gray-900">
+            <%= @client.full_name %>
+          </div>
+          <p class="text-base text-gray-700">
+            <%= @client.email %>
+          </p>
+          <p class="text-base text-gray-700">
+            <%= @client.phone %>
+          </p>
+        </div>
+        <div class="px-6 pt-4 pb-2">
+          <%= link_to edit_client_path(@client), class: "inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-900 rounded-full mr-2 mb-2" do%>
+            Edit
+          <%end%>
+          
+          <span class="inline-block px-3 py-1 mb-2 mr-2 text-sm font-semibold text-gray-300 hover:text-white bg-red-400 hover:bg-red-500 rounded-full">
+            Destroy
+          </span>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+  <hr />

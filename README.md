@@ -42,6 +42,10 @@ http://localhost:3000/
 Run all test:
 `$ rails test` or `$ bin/rails test`
 
+### Test system
+Run test in background
+`$ rails  test:system` or `$ DRIVER=chrome rails test:system`
+
 Run only one file test:
 `$ rails test test/models/article_test.rb`
 

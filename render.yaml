@@ -1,9 +1,6 @@
 databases:
   - name: agro-reports
-    databaseName: agro-reports
-    user: agro-reports
     plan: free
-
 
 services:
   - type: web

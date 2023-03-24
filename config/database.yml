@@ -82,5 +82,6 @@ test:
 production:
   <<: *default
   database: agro_reports_production
+  url: <%= ENV['DATABASE_URL'] %>
   username: agro_reports
   password: <%= ENV["AGRO_REPORTS_DATABASE_PASSWORD"] %>

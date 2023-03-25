@@ -1,6 +1,6 @@
 require "test_helper"
 
-class ClientsTest < ActionDispatch::IntegrationTest
+class ClientFlowsTest < ActionDispatch::IntegrationTest
   test "show a list of clients" do
     get "/clients"
 

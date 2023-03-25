@@ -1,6 +1,6 @@
 require "application_system_test_case"
 
-class ClientTest < ApplicationSystemTestCase
+class ClientsTest < ApplicationSystemTestCase
   setup do
     @client = clients(:felipe)
   end

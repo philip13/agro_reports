@@ -44,7 +44,7 @@ Run all test:
 
 ### Test system
 Run test in background
-`$ rails  test:system` or `$ DRIVER=chrome rails test:system`
+`$ bundle exec rake test:system` or `$ bundle exec rake test:system:with[chrome]`
 
 Run only one file test:
 `$ rails test test/models/article_test.rb`

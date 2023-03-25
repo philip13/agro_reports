@@ -7,5 +7,5 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
     :headless_chrome
   end
 
-  driven_by :selenium, using: :headless_chrome, screen_size: [1400, 1400]
+  driven_by :selenium, using: DRIVER, screen_size: [1400, 1400]
 end

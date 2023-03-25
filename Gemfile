@@ -78,3 +78,4 @@ gem "rubocop-rails_config", "~> 1.12", ">= 1.12.1"
 gem "standard", "~> 1.24", group: [:development, :test]
 
 gem "faker"
+gem 'devise', "~> 4.9 "

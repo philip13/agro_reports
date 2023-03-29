@@ -2,9 +2,9 @@ require "application_system_test_case"
 
 class UsersSignupTest < ApplicationSystemTestCase
   test "Signup" do
-    user = User.new(name: Faker::Name.name , email: Faker::Internet.email)
+    user = User.new(name: Faker::Name.name, email: Faker::Internet.email)
     visit new_user_registration_path
-    
+
     assert_selector "h2", text: "Sign up"
     fill_in "Name", with: user.name
     fill_in "Email", with: user.email
@@ -14,10 +14,8 @@ class UsersSignupTest < ApplicationSystemTestCase
     click_button "Sign up"
 
     assert_text "Welcome! You have signed up successfully."
-
-    # extend permited parameters on devise check issues on github
-    # relationship one account have a user owner_id 
-    # user accept nested attributes of account
-    # redirect to account details 
+    assert_selector "h2", text: "Account Details"
+    assert_text "Account #{user.name}"
+    assert_text user.email
   end
 end

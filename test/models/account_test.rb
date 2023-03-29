@@ -2,7 +2,7 @@ require "test_helper"
 
 class AccountTest < ActiveSupport::TestCase
   test "invalid with out name" do
-    account =  Account.new
+    account = Account.new
 
     assert_not account.valid?
   end

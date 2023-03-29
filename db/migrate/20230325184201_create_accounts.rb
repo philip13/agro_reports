@@ -8,4 +8,3 @@ class CreateAccounts < ActiveRecord::Migration[7.0]
     add_index :accounts, :name, unique: true
   end
 end
-

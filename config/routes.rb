@@ -4,5 +4,5 @@ Rails.application.routes.draw do
 
   root "accounts#show"
   resources :clients
-  resource :account
+  resources :accounts
 end

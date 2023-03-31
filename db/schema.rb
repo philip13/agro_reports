@@ -18,9 +18,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_28_171132) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
+    t.bigint "owner_id", null: false
     t.index ["name"], name: "index_accounts_on_name", unique: true
-    t.index ["user_id"], name: "index_accounts_on_user_id"
+    t.index ["owner_id"], name: "index_accounts_on_owner_id"
   end
 
   create_table "clients", force: :cascade do |t|
@@ -44,4 +44,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_28_171132) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
+  add_foreign_key "accounts", "users", column: "owner_id"
 end

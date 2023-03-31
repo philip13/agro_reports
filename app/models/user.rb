@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
-  has_one :account
+  has_one :account, class_name: "Account", foreign_key: "owner_id"
   accepts_nested_attributes_for :account
 
   def with_account

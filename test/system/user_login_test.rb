@@ -8,7 +8,7 @@ class UserLoginTest < ApplicationSystemTestCase
     assert_selector "h2", text: "Login"
     fill_in "Email", with: user.email
     fill_in "Password", with: "123456"
-    click_button "Login"
+    click_button "Log in"
 
     assert_text "Signed in successfully."
     assert_selector "h2", text: "Account Details"

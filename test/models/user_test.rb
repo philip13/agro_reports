@@ -6,7 +6,6 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "record user is valid" do
-    puts "user #{@user.inspect}"
     assert @user.valid?
   end
 end

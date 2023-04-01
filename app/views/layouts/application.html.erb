@@ -18,7 +18,9 @@
       <% end %>
 
       <div class="flex-1 flex flex-col overflow-hidden">
-        <%= render partial: "shared/header" %>
+        <% if user_signed_in? %>
+          <%= render partial: "shared/header" %>
+        <% end %>
         <%= render partial: "shared/flash_message" %>
 
         <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">

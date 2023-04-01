@@ -21,8 +21,7 @@
   </div>
 
   <div class="flex items-center">
-    <% if user_signed_in? %>
-      <%= link_to("Log out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }) %>
+    <%= link_to("Log out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }) %>
       
       <button class="flex mx-4 text-gray-600 focus:outline-none">
         <%= svg("bell", class: "w-6 h-6") %>
@@ -80,10 +79,6 @@
             >
           </div>
         </transition>
-      </div>
-    <% else %>
-      <%= link_to "Log in", new_user_session_path(), class: "block text-sm text-gray-600 fontme hover:underline mx-4" %>
-      <%= link_to "Sign up", new_user_registration_path(), class: "block text-sm text-indigo-700 fontme hover:underline mx-4" %>
-    <% end %>
+      </div>  
   </div>
 </header>

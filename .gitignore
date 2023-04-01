@@ -35,3 +35,5 @@
 
 
 vendor/bundle/ruby/*
+
+.DS_Store

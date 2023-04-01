@@ -2,6 +2,7 @@ require "application_system_test_case"
 
 class ClientsTest < ApplicationSystemTestCase
   setup do
+    sign_in users(:user1)
     @client = clients(:felipe)
   end
 
@@ -43,5 +44,12 @@ class ClientsTest < ApplicationSystemTestCase
     click_on "Destroy", match: :first
 
     assert_text "Client was successfully deleted"
+  end
+
+  test "non-logged in user can't see clients" do
+    sign_out :user
+    visit clients_url
+    assert_text "You need to sign in or sign up before continuing."
+    assert_selector "h2", text: "Login"
   end
 end

@@ -57,4 +57,4 @@ jobs:
         run: |
           bundle exec rails db:schema:load
           bundle exec rake assets:precompile
-          bundle exec rake
+          bundle exec rake test:all

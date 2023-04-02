@@ -1,6 +1,10 @@
 require "test_helper"
 
 class ClientsControllerTest < ActionDispatch::IntegrationTest
+  setup do
+    sign_in users(:user1)
+  end
+
   test "should get index" do
     get clients_url
     assert_response :success

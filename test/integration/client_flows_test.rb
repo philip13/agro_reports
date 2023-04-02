@@ -1,6 +1,10 @@
 require "test_helper"
 
 class ClientFlowsTest < ActionDispatch::IntegrationTest
+  setup do
+    sign_in users(:user1)
+  end
+
   test "show a list of clients" do
     get "/clients"
 

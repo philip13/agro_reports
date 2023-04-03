@@ -1,4 +1,3 @@
-# navigation_helper.rb
 module NavigationHelper
   def link_class link_path
     if current_page?(link_path)

@@ -10,7 +10,7 @@ class UserLoginTest < ApplicationSystemTestCase
     fill_in "Password", with: "123456"
     click_button "Log in"
 
-    assert_text "Signed in successfully."
+    assert_text I18n.t("devise.sessions.signed_in")
     assert_selector "h2", text: I18n.t("accounts.show.title")
     assert_text user.account.name
     assert_text user.email

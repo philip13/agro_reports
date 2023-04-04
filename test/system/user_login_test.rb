@@ -11,8 +11,8 @@ class UserLoginTest < ApplicationSystemTestCase
     click_button "Log in"
 
     assert_text "Signed in successfully."
-    assert_selector "h2", text: "Account Details"
-    assert_text "Account1"
+    assert_selector "h2", text: I18n.t("accounts.show.title")
+    assert_text user.account.name
     assert_text user.email
   end
 end

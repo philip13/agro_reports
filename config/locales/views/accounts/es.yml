@@ -1,0 +1,5 @@
+es:
+  accounts:
+    show:
+      title: Detalles de la Cuenta
+      edit: Editar

@@ -1,0 +1,5 @@
+es:
+  shared:
+    header:
+      search_placeholder: Buscar
+      log_out: Cerrar sesión

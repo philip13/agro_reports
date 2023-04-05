@@ -1,0 +1,5 @@
+en:
+  shared:
+    header:
+      search_placeholder: Search
+      log_out: Log out

@@ -1,0 +1,9 @@
+es:
+  devise:
+    failure:
+      unauthenticated: Tienes que iniciar sesión o registrarte antes de continuar.
+    registrations:
+      signed_up: Bienvenido. Tu cuenta fue creada exitosamente.
+    sessions:
+      signed_in: Sesión iniciada exitosamente.
+      signed_out: Sesión finalizada exitosamente.

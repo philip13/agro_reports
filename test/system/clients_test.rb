@@ -49,7 +49,7 @@ class ClientsTest < ApplicationSystemTestCase
   test "non-logged in user can't see clients" do
     sign_out :user
     visit clients_url
-    assert_text "You need to sign in or sign up before continuing."
+    assert_text I18n.t("devise.failure.unauthenticated")
     assert_selector "h2", text: "Login"
   end
 end

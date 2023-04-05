@@ -13,8 +13,8 @@ class UsersSignupTest < ApplicationSystemTestCase
     fill_in "Account name", with: "Account #{user.name}"
     click_button "Sign up"
 
-    assert_text "Welcome! You have signed up successfully."
-    assert_selector "h2", text: "Account Details"
+    assert_text I18n.t("devise.registrations.signed_up")
+    assert_selector "h2", text: I18n.t("accounts.show.title")
     assert_text "Account #{user.name}"
     assert_text user.email
   end

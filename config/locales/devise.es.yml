@@ -2,6 +2,7 @@ es:
   devise:
     failure:
       unauthenticated: Tienes que iniciar sesión o registrarte antes de continuar.
+      already_authenticated: "Ya has iniciado sesión."
     registrations:
       signed_up: Bienvenido. Tu cuenta fue creada exitosamente.
     sessions:

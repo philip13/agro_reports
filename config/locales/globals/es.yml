@@ -1,3 +1,6 @@
 es:
   app_name: AgroReports
   dashboard: Panel
+  yesno:
+    yes: "Si"
+    no: "No"

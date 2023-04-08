@@ -1,14 +1,14 @@
 es:
   devise:
     failure:
-      invited: "You have a pending invitation, accept it to finish creating your account."
+      invited: "Tienes una invitación pendiente, acéptala para terminar de crear tu cuenta."
     invitations:
       send_instructions: "Se ha enviado una invitación por correo electrónico a %{email}."
-      invitation_token_invalid: "The invitation token provided is not valid!"
-      updated: "Your password was set successfully. You are now signed in."
-      updated_not_active: "Your password was set successfully."
-      no_invitations_remaining: "No invitations remaining"
-      invitation_removed: "Your invitation was removed."
+      invitation_token_invalid: "¡El token de invitación proporcionado no es válido!"
+      updated: "Su contraseña se estableció con éxito. Ahora estás registrado."
+      updated_not_active: "Su contraseña se estableció con éxito."
+      no_invitations_remaining: "No quedan invitaciones"
+      invitation_removed: "Su invitación fue eliminada."
       new:
         header: "Enviar invitación"
         submit_button: "Enviar una invitación"
@@ -17,12 +17,12 @@ es:
         submit_button: "Guardar password"
     mailer:
       invitation_instructions:
-        subject: "Invitation instructions"
-        hello: "Hello %{email}"
-        someone_invited_you: "Someone has invited you to %{url}, you can accept it through the link below."
-        accept: "Accept invitation"
-        accept_until: "This invitation will be due in %{due_date}."
-        ignore: "If you don't want to accept the invitation, please ignore this email. Your account won't be created until you access the link above and set your password."
+        subject: "Instrucciones de invitación"
+        hello: "Hola %{email}"
+        someone_invited_you: "Alguien te ha invitado a %{url}, puedes aceptarlo a través del siguiente enlace."
+        accept: "Aceptar la invitacion"
+        accept_until: "Esta invitación vencerá en %{due_date}."
+        ignore: "Si no desea aceptar la invitación, ignore este correo electrónico. Su cuenta no se creará hasta que acceda al enlace anterior y establezca su contraseña."
   time:
     formats:
       devise:

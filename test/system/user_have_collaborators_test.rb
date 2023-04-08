@@ -15,11 +15,14 @@ class UserHaveCollaboratorsTest < ApplicationSystemTestCase
   end
 
   test "should invite collborators" do
+    collaborator_email = Faker::Internet.email
     visit collaborators_url
     click_on I18n.t("collaborators.index.invite")
 
-    fill_in "Name", with: Faker::Name.first_name
-    fill_in "Email", with: Faker::Internet.email
+    fill_in "Email", with: collaborator_email
     click_on I18n.t("devise.invitations.new.submit_button")
+
+    assert_current_path collaborators_path
+    assert_text I18n.t("devise.invitations.send_instructions", email: collaborator_email)
   end
 end

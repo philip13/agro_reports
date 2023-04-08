@@ -1,6 +1,3 @@
 en:
   app_name: AgroReports
   dashboard: Dashboard
-  yesno:
-    yes: "Yes"
-    no: "No"

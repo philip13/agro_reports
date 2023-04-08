@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :accounts
   resources :clients
   resources :collaborators, only: [:index]
+  resources :invititation_resends, only: [:create]
 end

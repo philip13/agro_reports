@@ -1,0 +1,11 @@
+es:
+  collaborators:
+    index:
+      title: Colaboradores
+      invite: Invitar Colaborador
+      reinvite: Reenviar invitación
+      active: Activo
+      inactive: Inactivo
+      name: Nombre
+      email: Correo electrónico
+      status: Estado

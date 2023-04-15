@@ -1,5 +1,8 @@
 en:
   shared:
+    sidebar:
+      clients: Clients
+      collaborators: Collaborators
     header:
       search_placeholder: Search
       log_out: Log out

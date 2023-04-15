@@ -66,6 +66,7 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem 'spring'
   gem "i18n-debug"
+  gem "letter_opener", group: :development
 end
 
 group :test do
@@ -80,3 +81,5 @@ gem "standard", "~> 1.24", group: [:development, :test]
 
 gem "faker"
 gem "devise", "~> 4.9"
+gem "devise_invitable", "~> 2.0"
+gem "uuid", "~> 2.3", ">= 2.3.9"

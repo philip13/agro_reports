@@ -95,6 +95,9 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise_invitable (2.0.7)
+      actionmailer (>= 5.0)
+      devise (>= 4.6)
     erubi (1.12.0)
     faker (3.1.1)
       i18n (>= 1.8.11, < 2)
@@ -115,9 +118,15 @@ GEM
       activesupport (>= 5.0.0)
     json (2.6.3)
     language_server-protocol (3.17.0.3)
+    launchy (2.5.2)
+      addressable (~> 2.8)
+    letter_opener (1.8.1)
+      launchy (>= 2.2, < 3)
     loofah (2.19.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
+    macaddr (1.7.2)
+      systemu (~> 2.6.5)
     mail (2.8.0.1)
       mini_mime (>= 0.1.1)
       net-imap
@@ -242,6 +251,7 @@ GEM
       rubocop-performance (= 1.15.2)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
+    systemu (2.6.5)
     tailwindcss-rails (2.0.21-arm64-darwin)
       railties (>= 6.0.0)
     tailwindcss-rails (2.0.21-x86_64-darwin)
@@ -257,6 +267,8 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.4.2)
+    uuid (2.3.9)
+      macaddr (~> 1.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -286,10 +298,12 @@ DEPENDENCIES
   capybara
   debug
   devise (~> 4.9)
+  devise_invitable (~> 2.0)
   faker
   i18n-debug
   importmap-rails
   jbuilder
+  letter_opener
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.2)
@@ -301,6 +315,7 @@ DEPENDENCIES
   tailwindcss-rails
   turbo-rails
   tzinfo-data
+  uuid (~> 2.3, >= 2.3.9)
   web-console
   webdrivers
 

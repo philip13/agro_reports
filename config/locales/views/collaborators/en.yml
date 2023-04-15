@@ -1,0 +1,11 @@
+en:
+  collaborators:
+    index: 
+      title: Collaborators
+      invite: Invite Collaborator
+      reinvite: Reinvite
+      active: Active
+      inactive: Inactive
+      name: Name
+      email: Email
+      status: Status

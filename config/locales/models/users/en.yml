@@ -1,0 +1,8 @@
+en:
+  users:
+    attributes:
+      email: "Correo electrónico"
+      password: "Contraseña"
+      remember_me: "Recordarme"
+      status: "Estatus"
+      name: "Nombre"

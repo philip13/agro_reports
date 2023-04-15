@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
-  include SetupDevisePermitttedParams
+  include SetupDeviseBehavior
+
   before_action :authenticate_user!
 end

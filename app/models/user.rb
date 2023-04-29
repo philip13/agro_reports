@@ -6,4 +6,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :invitable
 
   accepts_nested_attributes_for :account
+
+  def is_collaborator?
+    invited_by_id?
+  end
 end

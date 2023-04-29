@@ -3,4 +3,8 @@ class Account < ApplicationRecord
 
   validates :name, presence: true
   validates :name, uniqueness: true
+
+  def get_accounts 
+    Account.where("id IN (?)", [id, owner.invited_by.account.id])
+  end
 end

@@ -1,5 +1,6 @@
 class AccountsController < ApplicationController
   def show
-    @account = current_user.account
+    @account = params[:id] ? Account.find(params[:id]) : current_user.account
+    authorize @account, :show?
   end
 end

@@ -7,7 +7,11 @@ class User < ApplicationRecord
 
   accepts_nested_attributes_for :account
 
-  def is_collaborator?
+  def collaborator?
     invited_by_id?
+  end
+
+  def get_accounts
+    Account.where(id: [account.id, invited_by.account.id])
   end
 end

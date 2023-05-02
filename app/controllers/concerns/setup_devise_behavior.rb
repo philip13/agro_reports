@@ -1,6 +1,6 @@
 module SetupDeviseBehavior
   extend ActiveSupport::Concern
-  
+
   included do
     before_action :authenticate_user!
     before_action :configure_permitted_parameters, if: :devise_controller?
@@ -14,6 +14,11 @@ module SetupDeviseBehavior
     end
 
     def after_invite_path_for(inviter, invitee)
-      collaborators_url
+      account_collaborators_url(Current.account)
+    end
+
+    def after_sign_in_path_for(user)
+      Current.user = current_user
+      account_url(Current.account)
     end
 end

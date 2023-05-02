@@ -2,23 +2,26 @@ require "test_helper"
 
 class ClientFlowsTest < ActionDispatch::IntegrationTest
   setup do
-    sign_in users(:user1)
+    user = users(:user1)
+    @account = user.account
+    sign_in user
+    get "/"
   end
 
   test "show a list of clients" do
-    get "/clients"
+    get "/accounts/#{@account.id}/clients"
 
-    assert_select "h1", "Clients"
+    assert_select "h1", I18n.t("clients.index.title")
     assert_select "tbody" do
       assert_select "tr", Client.count
     end
   end
 
   test "create a client" do
-    get "/clients/new"
+    get "/accounts/#{@account.id}/clients/new"
     assert_response :success
 
-    post "/clients", params: {client: {
+    post "/accounts/#{@account.id}/clients", params: {client: {
       first_name: "John",
       last_name: "Smit",
       email: "john@gmail.com",
@@ -36,10 +39,10 @@ class ClientFlowsTest < ActionDispatch::IntegrationTest
   end
 
   test "update a client" do
-    get edit_client_path(@client)
+    get edit_account_client_path(@account, @client)
     assert_response :success
 
-    patch client_path(@client), params: {client: {first_name: "Phillip"}}
+    patch account_client_path(@account, @client), params: {client: {first_name: "Phillip"}}
     assert_response :redirect
     follow_redirect!
     assert_response :success
@@ -48,7 +51,7 @@ class ClientFlowsTest < ActionDispatch::IntegrationTest
 
   test "destroy a client" do
     assert_difference("Client.count", -1) do
-      delete client_path(@client)
+      delete account_client_path(@account, @client)
       assert_response :redirect
       follow_redirect!
       assert_response :success

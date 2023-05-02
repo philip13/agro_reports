@@ -1,7 +1,7 @@
 <div class="mt-8">
     <div class="mt-4 flex justify-around items-center">
       <div class="w-full md:w-3/5 p-6 bg-white rounded-md shadow-md">
-        <%= form_with model: client do |form| %>
+        <%= form_for([Current.account, client]) do |form| %>
           <div>
             <%= form.label :first_name, class: "font-medium text-gray-700" %>
             <%= form.text_field :first_name, class: "w-full mt-2 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500" %>
@@ -43,9 +43,9 @@
           </div>
 
           <div class="flex items-center justify-between px-0 py-3">
-            <%= link_to 'Back', clients_url, class: "px-3 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded-md hover:bg-gray-300 focus:outline-none"%>
+            <%= link_to 'Back', account_clients_path(Current.account), class: "px-3 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded-md hover:bg-gray-300 focus:outline-none"%>
 
-            <%= form.submit  class: "px-3 py-2 text-sm text-white bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none" %>
+            <%= form.submit class: "px-3 py-2 text-sm text-white bg-indigo-600 rounded-md hover:bg-indigo-500 focus:outline-none" %>
           </div>
         <% end %>
       </div>

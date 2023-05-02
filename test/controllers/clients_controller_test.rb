@@ -2,33 +2,36 @@ require "test_helper"
 
 class ClientsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    sign_in users(:user1)
+    user = users(:user1)
+    @account = user.account
+    sign_in user
+    get root_url
   end
 
   test "should get index" do
-    get clients_url
+    get account_clients_url(@account)
     assert_response :success
   end
 
   test "should get new" do
-    get new_client_url
+    get new_account_client_url(@account)
     assert_response :success
   end
 
   test "should create client" do
     assert_difference("Client.count") do
-      post clients_url, params: {
+      post account_clients_url(@account), params: {
         client: {
           first_name: "Juan", last_name: "Samches", email: "juan@mail.com", phone: "341 111 2233"
         }
       }
     end
 
-    assert_redirected_to client_url(Client.last)
+    assert_redirected_to account_client_url(@account, Client.last)
   end
 
   test "should not create client" do
-    post clients_url, params: {
+    post account_clients_url(@account), params: {
       client: {
         first_name: nil, last_name: nil, email: nil, phone: nil
       }
@@ -41,28 +44,28 @@ class ClientsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should show client" do
-    get client_url(@client)
+    get account_clients_url(@account, @client)
     assert_response :success
   end
 
   test "should get edit" do
-    get edit_client_url(@client)
+    get edit_account_client_url(@account, @client)
     assert_response :success
   end
 
   test "should update client" do
-    patch client_url(@client), params: {
+    patch account_client_url(@account, @client), params: {
       client: {
         first_name: "#{@client.first_name} update",
         last_name: "#{@client.last_name} update"
       }
     }
 
-    assert_redirected_to client_url(@client)
+    assert_redirected_to account_client_url(@account, @client)
   end
 
   test "should not update client" do
-    patch client_url(@client), params: {
+    patch account_client_url(@account, @client), params: {
       client: {
         email: nil
       }
@@ -73,10 +76,10 @@ class ClientsControllerTest < ActionDispatch::IntegrationTest
 
   test "should destroy client" do
     assert_difference("Client.count", -1) do
-      delete client_url(@client)
+      delete account_client_url(@account, @client)
     end
 
-    assert_redirected_to clients_url
+    assert_redirected_to account_clients_url(@account)
     assert_response :see_other
   end
 end

@@ -1,3 +1,7 @@
 en:
-  app_name: AgroReports
-  dashboard: Dashboard
+  app_name: "AgroReports"
+  dashboard: "Dashboard"
+  workspace: "Workspace"
+  workspaces: "Workspaces"
+  record_no_found: "Record No Found"
+  no_authorized: "You are not authorized to perform this action."

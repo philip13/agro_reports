@@ -9,11 +9,10 @@ class AccountPolicy
   end
 
   def show?
-    @my_account == @account || @my_account.get_accounts.include?(@account)
+    @my_account == @account || @user.get_accounts.include?(@account)
   end
 
   def update?
     @my_account == @account
   end
 end
-

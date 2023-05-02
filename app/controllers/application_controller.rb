@@ -1,13 +1,17 @@
 class ApplicationController < ActionController::Base
   include SetupDeviseBehavior
-  include Pundit::Authorization
+  include PunditAuthorization
 
-  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+  before_action :setup_credentials, if: :user_signed_in?
 
   private
+    def record_not_found
+      redirect_back_or_to root_path, alert: I18n.t("record_no_found")
+    end
 
-  def user_not_authorized
-    flash[:alert] = "You are not authorized to perform this action."
-    redirect_back(fallback_location: root_path)
-  end
+    def setup_credentials
+      Current.user = current_user
+      Current.account = Account.find(params[:account_id]) unless params[:account_id].nil?
+    end
 end

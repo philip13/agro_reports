@@ -3,4 +3,8 @@ class Account < ApplicationRecord
 
   validates :name, presence: true
   validates :name, uniqueness: true
+
+  def short_name
+    name.truncate(15, separator: " ")
+  end
 end

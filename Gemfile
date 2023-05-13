@@ -79,7 +79,9 @@ end
 gem "rubocop-rails_config", "~> 1.12", ">= 1.12.1"
 gem "standard", "~> 1.24", group: [:development, :test]
 
-gem "faker"
+gem "faker", "~> 3.1"
 gem "devise", "~> 4.9"
 gem "devise_invitable", "~> 2.0"
 gem "uuid", "~> 2.3", ">= 2.3.9"
+
+gem "pundit", "~> 2.3"

@@ -1,3 +1,8 @@
 es:
-  app_name: AgroReports
-  dashboard: Panel
+  app_name: "AgroReports"
+  dashboard: "Panel"
+  workspace: "Área de trabajo"
+  workspaces: "Áreas de trabajo"
+  record_no_found: "Registro no encontrado"
+  no_authorized: "No está autorizado para realizar esta acción."
+  

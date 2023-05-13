@@ -1,0 +1,7 @@
+en:
+  clients:
+    index:
+      title: "Clients"
+      new: "New Client"
+    form:
+      submit: "Create Client"

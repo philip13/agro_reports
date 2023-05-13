@@ -2,18 +2,19 @@ require "application_system_test_case"
 
 class ClientsTest < ApplicationSystemTestCase
   setup do
-    sign_in users(:user1)
     @client = clients(:felipe)
+    @user = users(:user1)
+    @account = @user.account
+    sign_in @user
   end
 
   test "visiting the index" do
-    visit clients_url
-    assert_selector "h1", text: "Clients"
+    visit account_clients_path(@account)
+    assert_selector "h1", text: I18n.t("clients.index.title")
   end
 
   test "should create client" do
-    visit clients_url
-    click_on "New Client"
+    visit new_account_client_path(@account)
 
     fill_in "First name", with: @client.first_name
     fill_in "Last name", with: @client.last_name
@@ -26,7 +27,7 @@ class ClientsTest < ApplicationSystemTestCase
   end
 
   test "should update Client" do
-    visit client_url(@client)
+    visit account_client_path(@account, @client)
     click_on "Edit"
 
     fill_in "First name", with: @client.first_name
@@ -40,7 +41,7 @@ class ClientsTest < ApplicationSystemTestCase
   end
 
   test "should destroy Client" do
-    visit clients_url
+    visit account_clients_path(@account)
     click_on "Destroy", match: :first
 
     assert_text "Client was successfully deleted"
@@ -48,7 +49,8 @@ class ClientsTest < ApplicationSystemTestCase
 
   test "non-logged in user can't see clients" do
     sign_out :user
-    visit clients_url
+    visit account_clients_path(@account)
+
     assert_text I18n.t("devise.failure.unauthenticated")
     assert_selector "h2", text: "Login"
   end

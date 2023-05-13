@@ -7,3 +7,7 @@ account1:
 account2:
   name: "Account2"
   owner: user2
+
+collaborator_account1:
+  name: "collaborator account 1"
+  owner: collaborator1

@@ -1,0 +1,4 @@
+es:
+  validators:
+    email_validator:
+      format_error: "formato no valido!"

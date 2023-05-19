@@ -3,5 +3,10 @@ es:
     index:
       title: "Clientes"
       new: "Nuevo Cliente"
-    form:
-      submit: "Crear Cliente"
+      full_name: "Nombre"
+      email: "Correo electrónico"
+      phone: "Teléfono"
+    new:
+      title: "Nuevo Cliente"
+    edit:
+      title: "Editar Cliente"

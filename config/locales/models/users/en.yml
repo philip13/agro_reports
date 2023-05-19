@@ -1,8 +1,8 @@
 en:
   users:
     attributes:
-      email: "Correo electrónico"
-      password: "Contraseña"
-      remember_me: "Recordarme"
-      status: "Estatus"
-      name: "Nombre"
+      email: "Email"
+      password: "Password"
+      remember_me: "Remember me"
+      status: "Status"
+      name: "Name"

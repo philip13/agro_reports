@@ -5,3 +5,11 @@ en:
   workspaces: "Workspaces"
   record_no_found: "Record No Found"
   no_authorized: "You are not authorized to perform this action."
+  edit: "Edit"
+  view: "View"
+  destroy: "Destroy"
+  back: "Back"
+  helpers:
+    submit:
+      create: "Create %{model}"
+      update: "Update %{model}"

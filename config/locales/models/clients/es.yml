@@ -1,0 +1,22 @@
+es:
+  clients:
+    attributes:
+      first_name: "Nombre"
+      last_name: "Apellidos"
+      email: "Correo electrónico"
+      phone: "Teléfono"
+  activerecord:
+    models:
+      client: "cliente"
+    errors:
+      models:
+        client:
+          attributes:
+            first_name:
+              blank: "requerido!"
+            last_name:
+              blank: "requerido!"
+            email:
+              blank: "requerido!"
+            phone:
+              blank: "requerido!"

@@ -1,0 +1,9 @@
+es:
+  devise:
+    registrations:
+      new:
+        title: "Registrarse"
+        account_name: "Nombre de la cuenta"
+        sign_up: "Registrarse"
+        characters_minimum: "mínimo de caracteres"
+

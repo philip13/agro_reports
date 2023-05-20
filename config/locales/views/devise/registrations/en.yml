@@ -1,0 +1,9 @@
+en:
+  devise:
+    registrations:
+      new:
+        title: "Sign up"
+        account_name: "Account Name"
+        sign_up: "Sign up"
+        characters_minimum: "characters minimum"
+        

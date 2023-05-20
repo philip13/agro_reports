@@ -3,6 +3,22 @@ es:
     attributes:
       email: "Correo electrónico"
       password: "Contraseña"
+      password_confirmation: "Confirmar contraseña"
       remember_me: "Recordarme"
       status: "Estatus"
       name: "Nombre"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "requerido!"
+              taken: "ya existe!"
+            name:
+              blank: "requerido!"
+            password:
+              blank: "requerido!"
+              too_short: "demasiado corta!"
+            password_confirmation:
+              confirmation: "no coincide!"

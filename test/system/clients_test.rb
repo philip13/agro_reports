@@ -25,7 +25,7 @@ class ClientsTest < ApplicationSystemTestCase
     click_on I18n.t("helpers.submit.create", model: model)
 
     assert_text "Client was sucessfully created"
-    click_on "Back"
+    click_on I18n.t("back")
   end
 
   test "should update Client" do
@@ -41,7 +41,7 @@ class ClientsTest < ApplicationSystemTestCase
     click_on I18n.t("helpers.submit.update", model: model)
 
     assert_text "Client was successfully update"
-    click_on "Back"
+    click_on I18n.t("back")
   end
 
   test "should destroy Client" do
@@ -56,6 +56,6 @@ class ClientsTest < ApplicationSystemTestCase
     visit account_clients_path(@account)
 
     assert_text I18n.t("devise.failure.unauthenticated")
-    assert_selector "h2", text: "Login"
+    assert_selector "h2", text: I18n.t("devise.sessions.new.title")
   end
 end

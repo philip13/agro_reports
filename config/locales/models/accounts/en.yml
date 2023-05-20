@@ -1,0 +1,11 @@
+en:
+  accounts:
+    attributes:
+      name: "Name"
+  activerecord:
+    errors:
+      models:
+        account:
+          attributes:
+            name:
+              blank: "required!"

@@ -7,7 +7,7 @@ es:
   no_authorized: "No está autorizado para realizar esta acción."
   edit: "Editar"
   view: "Ver"
-  destroy: "Destruir"
+  destroy: "Borrar"
   back: "Regresar"
   helpers:
     submit:

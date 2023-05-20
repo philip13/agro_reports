@@ -3,6 +3,22 @@ en:
     attributes:
       email: "Email"
       password: "Password"
+      password_confirmation: "Password confirmation"
       remember_me: "Remember me"
       status: "Status"
       name: "Name"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "required!"
+              taken: "already taken!"
+            name:
+              blank: "required!"
+            password:
+              blank: "required!"
+              too_short: "too short!"
+            password_confirmation:
+              confirmation: "doesn't match!"

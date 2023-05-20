@@ -1,11 +1,11 @@
 es:
-  clients:
-    attributes:
-      first_name: "Nombre"
-      last_name: "Apellidos"
-      email: "Correo electrónico"
-      phone: "Teléfono"
   activerecord:
+    attributes:
+      client:
+        first_name: "Nombre"
+        last_name: "Apellidos"
+        email: "Correo electrónico"
+        phone: "Teléfono"
     models:
       client: "cliente"
     errors:

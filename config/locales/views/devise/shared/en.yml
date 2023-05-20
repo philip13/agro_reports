@@ -1,0 +1,10 @@
+en:
+  devise:
+    shared:
+      links:
+        log_in: "Log in"
+        sign_up: "Sign up"
+        forgot_password?: "Forgot your password?"
+        didnt_confirmation_instructions?: "Didn't receive confirmation instructions?"
+        didnt_unlock_instructions?: "Didn't receive unlock instructions?"
+        sign_in_with: "Sing in with %{provider}"

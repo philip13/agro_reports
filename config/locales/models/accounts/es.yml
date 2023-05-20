@@ -1,0 +1,11 @@
+es:
+  accounts:
+    attributes:
+      name: "Nombre"
+  activerecord:
+    errors:
+      models:
+        account:
+          attributes:
+            name:
+              blank: "requerido!"

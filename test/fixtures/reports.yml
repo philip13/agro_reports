@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+report_felipe1:
+  status: MyString
+  visited_at: 2023-05-23
+  account: account1
+  client: felipe
+  sector: sector1
+

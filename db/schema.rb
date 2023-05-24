@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_05_214805) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_23_200428) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -30,6 +30,39 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_05_214805) do
     t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "crops", force: :cascade do |t|
+    t.string "name"
+    t.string "kind_of_crop"
+    t.string "plant_variety"
+    t.string "sowing_in"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reports", force: :cascade do |t|
+    t.string "status"
+    t.date "visited_at"
+    t.bigint "account_id", null: false
+    t.bigint "client_id", null: false
+    t.bigint "sector_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_reports_on_account_id"
+    t.index ["client_id"], name: "index_reports_on_client_id"
+    t.index ["sector_id"], name: "index_reports_on_sector_id"
+  end
+
+  create_table "sectors", force: :cascade do |t|
+    t.string "name"
+    t.string "phenological_state"
+    t.bigint "client_id", null: false
+    t.bigint "crop_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_sectors_on_client_id"
+    t.index ["crop_id"], name: "index_sectors_on_crop_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -57,4 +90,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_05_214805) do
   end
 
   add_foreign_key "accounts", "users", column: "owner_id"
+  add_foreign_key "reports", "accounts"
+  add_foreign_key "reports", "clients"
+  add_foreign_key "reports", "sectors"
+  add_foreign_key "sectors", "clients"
+  add_foreign_key "sectors", "crops"
 end

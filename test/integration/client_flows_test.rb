@@ -35,7 +35,7 @@ class ClientFlowsTest < ActionDispatch::IntegrationTest
   end
 
   setup do
-    @client = clients(:felipe)
+    @client = clients(:two)
   end
 
   test "update a client" do

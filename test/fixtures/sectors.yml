@@ -1,0 +1,7 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+sector1:
+  name: MyString
+  phenological_state: MyString
+  client: felipe
+  crop_id: 1

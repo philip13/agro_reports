@@ -42,7 +42,8 @@ class ClientsTest < ApplicationSystemTestCase
 
   test "should destroy Client" do
     visit account_clients_path(@account)
-    click_on "Destroy", match: :first
+    all(:button, "Destroy").last.click
+
 
     assert_text "Client was successfully deleted"
   end

@@ -37,8 +37,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_23_200428) do
     t.string "kind_of_crop"
     t.string "plant_variety"
     t.string "sowing_in"
+    t.bigint "account_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_crops_on_account_id"
   end
 
   create_table "reports", force: :cascade do |t|
@@ -90,6 +92,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_23_200428) do
   end
 
   add_foreign_key "accounts", "users", column: "owner_id"
+  add_foreign_key "crops", "accounts"
   add_foreign_key "reports", "accounts"
   add_foreign_key "reports", "clients"
   add_foreign_key "reports", "sectors"

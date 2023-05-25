@@ -2,7 +2,9 @@
 
 berries:
   id: 1
-  name: Berries
-  kind_of_crop: My kind of crop
-  plant_variety: blackberry
-  sowing_in: floor
+  name: "Berries"
+  kind_of_crop: "My kind of crop"
+  plant_variety: "blackberry"
+  sowing_in: "floor"
+  account: account1
+  

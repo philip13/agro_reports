@@ -1,4 +1,6 @@
 class Sector < ApplicationRecord
   belongs_to :client
-  belongs_to :crop
+  has_one :crop
+  validates :name, :phenological_state, presence: true
+
 end

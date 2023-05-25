@@ -5,6 +5,7 @@ class CreateCrops < ActiveRecord::Migration[7.0]
       t.string :kind_of_crop
       t.string :plant_variety
       t.string :sowing_in
+      t.references :account, null: false, foreign_key: true
 
       t.timestamps
     end

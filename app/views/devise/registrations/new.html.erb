@@ -6,12 +6,14 @@
       <span class="text-3xl font-semibold text-gray-700">AgroReports</span>
     </div>
     
-    <h2 class="text-2xl font-semibold text-gray-700">Sign up</h2>
+    <h2 class="text-2xl font-semibold text-gray-700 text-center">
+      <%= t(".title")%>
+    </h2>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: "mt-4") do |f| %>
       <div class="block">
-        <%= f.label :name, class: "text-sm text-gray-700" %>
+        <%= f.label User.human_attribute_name(:name), class: "text-sm text-gray-700" %>
         <%= f.text_field :name, autofocus: true, class: "block w-full mt-1 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500" %>
-        <% resource.errors.full_messages_for(:name).each do |message| %>
+        <% resource.errors.messages_for(:name).each do |message| %>
           <span class="font-light text-sm text-red-500">
             <%= message %>
           </span>
@@ -19,9 +21,9 @@
       </div>
 
       <div class="block mt-3">
-        <%= f.label :email, class: "text-sm text-gray-700" %>
+        <%= f.label User.human_attribute_name(:email), class: "text-sm text-gray-700" %>
         <%= f.email_field :email, autocomplete: "email", class: "block w-full mt-1 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500" %>
-        <% resource.errors.full_messages_for(:email).each do |message| %>
+        <% resource.errors.messages_for(:email).each do |message| %>
           <span class="font-light text-sm text-red-500">
             <%= message %>
           </span>
@@ -29,14 +31,14 @@
       </div>
 
       <div class="block mt-3">
-        <%= f.label :password, class: "text-sm text-gray-700" %>
+        <%= f.label User.human_attribute_name(:password), class: "text-sm text-gray-700" %>
         <% if @minimum_password_length %>
           <em class="text-sm text-gray-700">
-            (<%= @minimum_password_length %> characters minimum
+            (<%= @minimum_password_length %> <%= t(".characters_minimum") %>
           </em>
         <% end %>
         <%= f.password_field :password, autocomplete: "new-password", class: "block w-full mt-1 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500"%>
-        <% resource.errors.full_messages_for(:password).each do |message| %>
+        <% resource.errors.messages_for(:password).each do |message| %>
           <span class="font-light text-sm text-red-500">
             <%= message %>
           </span>
@@ -44,9 +46,9 @@
       </div>
 
       <div class="block mt-3">
-        <%= f.label :password_confirmation, class: "text-sm text-gray-700" %>
+        <%= f.label User.human_attribute_name(:password_confirmation), class: "text-sm text-gray-700" %>
         <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "block w-full mt-1 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500" %>
-        <% resource.errors.full_messages_for(:password_confirmation).each do |message| %>
+        <% resource.errors.messages_for(:password_confirmation).each do |message| %>
           <span class="font-light text-sm text-red-500">
             <%= message %>
           </span>
@@ -55,11 +57,11 @@
 
       <div class="block mt-3">
         <%= f.fields_for :account, Account.new(owner: resource) do |account| %>
-          <%= account.label :name, "Account name", class: "text-sm text-gray-700" %>
+          <%= account.label :name, t(".account_name"), class: "text-sm text-gray-700" %>
           <%= account.text_field :name, class: "block w-full mt-1 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500" %>
-          <% resource.account.errors.messages_for(:name).each do |message| %>
+          <% resource.errors.messages_for("account.name").each do |message| %>
             <span class="font-light text-sm text-red-500">
-              Account name <%= message %>
+              <%= message %>
             </span>
           <% end %>
         <% end %>
@@ -67,7 +69,7 @@
       <div>
 
       <div class="actions mt-6">
-        <%= f.submit "Sign up", class: "w-full px-4 py-2 text-sm text-center text-white bg-indigo-600 rounded-md focus:outline-none hover:bg-indigo-500" %>
+        <%= f.submit t(".sign_up"), class: "w-full px-4 py-2 text-sm text-center text-white bg-indigo-600 rounded-md focus:outline-none hover:bg-indigo-500" %>
       </div>
 
       <div class="flex items-center justify-end mt-4">

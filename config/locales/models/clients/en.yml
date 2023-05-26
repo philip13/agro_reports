@@ -1,0 +1,22 @@
+en:
+  activerecord:
+    attributes:
+      clients:
+        first_name: "First name"
+        last_name: "Last name"
+        email: "Email"
+        phone: "Phone"
+    models:
+      client: "client"
+    errors:
+      models:
+        client:
+          attributes:
+            first_name:
+              blank: "required!"
+            last_name:
+              blank: "required!"
+            email:
+              blank: "required!"
+            phone:
+              blank: "required!"

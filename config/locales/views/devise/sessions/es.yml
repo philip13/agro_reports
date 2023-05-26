@@ -1,0 +1,7 @@
+es:
+  devise:
+    sessions:
+      new:
+        title: "Acceso"
+        remember_me: "Recordar"
+        log_in: "Iniciar sesión"

@@ -1,0 +1,4 @@
+en:
+  validators:
+    email_validator:
+      format_error: "is not an email!"

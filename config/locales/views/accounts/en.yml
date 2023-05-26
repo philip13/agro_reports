@@ -1,5 +1,4 @@
 en:
   accounts:
     show:
-      title: Account Details
-      edit: Edit
+      title: "Account Details"

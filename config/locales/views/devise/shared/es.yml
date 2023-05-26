@@ -1,0 +1,10 @@
+es:
+  devise:
+    shared:
+      links:
+        log_in: "Acceder"
+        sign_up: "Registrarse"
+        forgot_password?: "¿Olvidaste tu contraseña?"
+        didnt_confirmation_instructions?: "¿No recibiste instrucciones de confirmación?"
+        didnt_unlock_instructions?: "¿No recibiste instrucciones de desbloqueo?"
+        sign_in_with: "Acceder con %{provider}"

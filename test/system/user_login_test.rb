@@ -5,10 +5,10 @@ class UserLoginTest < ApplicationSystemTestCase
     user = users(:user1)
     visit new_user_session_path
 
-    assert_selector "h2", text: "Login"
-    fill_in "Email", with: user.email
-    fill_in "Password", with: "123456"
-    click_button "Log in"
+    assert_selector "h2", text: I18n.t("devise.sessions.new.title")
+    fill_in "user[email]", with: user.email
+    fill_in "user[password]", with: "123456"
+    click_button I18n.t("devise.sessions.new.log_in")
 
     assert_text I18n.t("devise.sessions.signed_in")
     assert_selector "h2", text: I18n.t("accounts.show.title")

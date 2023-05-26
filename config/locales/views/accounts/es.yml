@@ -1,5 +1,4 @@
 es:
   accounts:
     show:
-      title: Detalles de la Cuenta
-      edit: Editar
+      title: "Detalles de la Cuenta"

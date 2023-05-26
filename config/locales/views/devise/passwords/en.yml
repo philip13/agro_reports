@@ -1,0 +1,13 @@
+en:
+  devise:
+    passwords:
+      new:
+        forgot_password?: "Forgot your password?"
+        email: "email"
+        send_me_instructions: "Send me reset password instructions"
+      edit:
+        title: "Change your password"
+        submit_button: "Change my password"
+        password: "Password"
+        password_confirmation: "Confirm new password"
+        characters_minimum: "characters minimum"

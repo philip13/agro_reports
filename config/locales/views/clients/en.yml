@@ -1,7 +1,14 @@
 en:
+  models:
+    client: "Client"
   clients:
     index:
       title: "Clients"
       new: "New Client"
-    form:
-      submit: "Create Client"
+      full_name: "Full name"
+      email: "Email"
+      phone: "Phone"
+    new:
+      title: "New Client"
+    edit:
+      title: "Edit Client"

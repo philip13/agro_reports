@@ -1,0 +1,13 @@
+es:
+  devise:
+    passwords:
+      new:
+        title: "¿Olvidaste tu contraseña?"
+        email: "Correo electrónico"
+        send_me_instructions: "Envíame instrucciones para nueva contraseña"
+      edit:
+        title: "Cambia tu contraseña"
+        submit_button: "Cambiar mi contraseña"
+        password: "Contraseña"
+        password_confirmation: "Confirmar nueva contraseña"
+        characters_minimum: "mínimo de caracteres"

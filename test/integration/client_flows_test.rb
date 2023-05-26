@@ -31,7 +31,7 @@ class ClientFlowsTest < ActionDispatch::IntegrationTest
     assert_response :redirect
     follow_redirect!
     assert_response :success
-    assert_select "div", "Client was sucessfully created"
+    assert_select "div", I18n.t("flash.notice.client.created")
   end
 
   setup do
@@ -46,7 +46,7 @@ class ClientFlowsTest < ActionDispatch::IntegrationTest
     assert_response :redirect
     follow_redirect!
     assert_response :success
-    assert_select "div", "Client was successfully update"
+    assert_select "div", I18n.t("flash.notice.client.updated")
   end
 
   test "destroy a client" do
@@ -57,6 +57,6 @@ class ClientFlowsTest < ActionDispatch::IntegrationTest
       assert_response :success
     end
 
-    assert_select "div", "Client was successfully deleted"
+    assert_select "div", I18n.t("flash.alert.client.deleted")
   end
 end

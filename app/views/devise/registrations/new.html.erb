@@ -11,7 +11,7 @@
     </h2>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: "mt-4") do |f| %>
       <div class="block">
-        <%= f.label t("users.attributes.name"), class: "text-sm text-gray-700" %>
+        <%= f.label User.human_attribute_name(:name), class: "text-sm text-gray-700" %>
         <%= f.text_field :name, autofocus: true, class: "block w-full mt-1 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500" %>
         <% resource.errors.messages_for(:name).each do |message| %>
           <span class="font-light text-sm text-red-500">
@@ -21,7 +21,7 @@
       </div>
 
       <div class="block mt-3">
-        <%= f.label t("users.attributes.email"), class: "text-sm text-gray-700" %>
+        <%= f.label User.human_attribute_name(:email), class: "text-sm text-gray-700" %>
         <%= f.email_field :email, autocomplete: "email", class: "block w-full mt-1 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500" %>
         <% resource.errors.messages_for(:email).each do |message| %>
           <span class="font-light text-sm text-red-500">
@@ -31,7 +31,7 @@
       </div>
 
       <div class="block mt-3">
-        <%= f.label t("users.attributes.password"), class: "text-sm text-gray-700" %>
+        <%= f.label User.human_attribute_name(:password), class: "text-sm text-gray-700" %>
         <% if @minimum_password_length %>
           <em class="text-sm text-gray-700">
             (<%= @minimum_password_length %> <%= t(".characters_minimum") %>
@@ -46,7 +46,7 @@
       </div>
 
       <div class="block mt-3">
-        <%= f.label t("users.attributes.password_confirmation"), class: "text-sm text-gray-700" %>
+        <%= f.label User.human_attribute_name(:password_confirmation), class: "text-sm text-gray-700" %>
         <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "block w-full mt-1 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500" %>
         <% resource.errors.messages_for(:password_confirmation).each do |message| %>
           <span class="font-light text-sm text-red-500">

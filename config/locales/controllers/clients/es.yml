@@ -1,9 +1,0 @@
-es:
-  flash:
-    notice:
-      client:
-        created: "El cliente se creó exitosamente."
-        updated: "El cliente se actualizó exitosamente."
-    alert:
-      client:
-        deleted: "El cliente se eliminó exitosamente."

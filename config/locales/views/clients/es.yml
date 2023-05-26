@@ -1,4 +1,6 @@
 es:
+  models:
+    client: "Cliente"
   clients:
     index:
       title: "Clientes"

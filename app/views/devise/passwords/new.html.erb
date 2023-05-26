@@ -13,7 +13,7 @@
 
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
       <div class="field items-center justify-between mt-4">
-        <%= f.label t("users.attributes.email"), class: "text-sm text-gray-700" %>
+        <%= f.label User.human_attribute_name(:email), class: "text-sm text-gray-700" %>
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "block w-full mt-1 border-gray-200 rounded-md focus:border-indigo-600 focus:ring focus:ring-opacity-40 focus:ring-indigo-500" %>
         <% resource.errors.messages_for(:email).each do |msg| %>
           <div class="font-light text-sm text-red-500 last:pb-3">

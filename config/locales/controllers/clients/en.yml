@@ -1,9 +1,0 @@
-en:
-  flash:
-    notice:
-      client:
-        created: "Client was sucessfully created"
-        updated: "Client was successfully update"
-    alert:
-      client:
-        deleted: "Client was successfully deleted"

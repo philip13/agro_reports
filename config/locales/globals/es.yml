@@ -13,3 +13,8 @@ es:
     submit:
       create: "Crear %{model}"
       update: "Actualizar %{model}"
+  flash:
+    message:
+      resource_created: "%{resource} creado correctamente"
+      resource_updated: "%{resource} actualizado correctamente"
+      resource_deleted: "%{resource} eliminado correctamente"

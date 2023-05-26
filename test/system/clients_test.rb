@@ -24,7 +24,7 @@ class ClientsTest < ApplicationSystemTestCase
     model = I18n.t("activerecord.models.client")
     click_on I18n.t("helpers.submit.create", model: model)
 
-    assert_text I18n.t("flash.notice.client.created")
+    assert_text I18n.t("flash.message.resource_created", resource: I18n.t("models.client"))
     click_on I18n.t("back")
   end
 
@@ -40,7 +40,7 @@ class ClientsTest < ApplicationSystemTestCase
     model = I18n.t("activerecord.models.client")
     click_on I18n.t("helpers.submit.update", model: model)
 
-    assert_text I18n.t("flash.notice.client.updated")
+    assert_text I18n.t("flash.message.resource_updated", resource: I18n.t("models.client"))
     click_on I18n.t("back")
   end
 
@@ -48,7 +48,7 @@ class ClientsTest < ApplicationSystemTestCase
     visit account_clients_path(@account)
     click_on I18n.t("destroy"), match: :first
 
-    assert_text I18n.t("flash.alert.client.deleted")
+    assert_text I18n.t("flash.message.resource_deleted", resource: I18n.t("models.client"))
   end
 
   test "non-logged in user can't see clients" do

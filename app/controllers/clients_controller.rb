@@ -13,7 +13,7 @@ class ClientsController < ApplicationController
     @client = Client.new(client_params)
 
     if @client.save
-      redirect_to account_client_path(Current.account, @client), notice: "Client was sucessfully created"
+      redirect_to account_client_path(Current.account, @client), notice: t("flash.message.resource_created", resource: t("models.client"))
     else
       render :new, status: :unprocessable_entity
     end
@@ -27,7 +27,7 @@ class ClientsController < ApplicationController
 
   def update
     if @client.update(client_params)
-      redirect_to account_client_path(Current.account, @client), notice: "Client was successfully update"
+      redirect_to account_client_path(Current.account, @client), notice: t("flash.message.resource_updated", resource: t("models.client"))
     else
       render :edit, status: :unprocessable_entity
     end
@@ -35,7 +35,7 @@ class ClientsController < ApplicationController
 
   def destroy
     @client.destroy
-    redirect_to account_clients_path(Current.account), status: :see_other, alert: "Client was successfully deleted"
+    redirect_to account_clients_path(Current.account), status: :see_other, alert: t("flash.message.resource_deleted", resource: t("models.client"))
   end
 
   private

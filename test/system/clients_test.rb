@@ -16,36 +16,39 @@ class ClientsTest < ApplicationSystemTestCase
   test "should create client" do
     visit new_account_client_path(@account)
 
-    fill_in "First name", with: @client.first_name
-    fill_in "Last name", with: @client.last_name
-    fill_in "Email", with: @client.email
-    fill_in "Phone", with: @client.phone
-    click_on "Create Client"
+    fill_in "client[first_name]", with: @client.first_name
+    fill_in "client[last_name]", with: @client.last_name
+    fill_in "client[email]", with: @client.email
+    fill_in "client[phone]", with: @client.phone
 
-    assert_text "Client was sucessfully created"
-    click_on "Back"
+    model = I18n.t("activerecord.models.client")
+    click_on I18n.t("helpers.submit.create", model: model)
+
+    assert_text I18n.t("flash.message.resource_created", resource: I18n.t("models.client"))
+    click_on I18n.t("back")
   end
 
   test "should update Client" do
     visit account_client_path(@account, @client)
     click_on "Edit"
 
-    fill_in "First name", with: @client.first_name
-    fill_in "Last name", with: @client.last_name
-    fill_in "Email", with: @client.email
-    fill_in "Phone", with: @client.phone
-    click_on "Update Client"
+    fill_in "client[first_name]", with: @client.first_name
+    fill_in "client[last_name]", with: @client.last_name
+    fill_in "client[email]", with: @client.email
+    fill_in "client[phone]", with: @client.phone
 
-    assert_text "Client was successfully update"
-    click_on "Back"
+    model = I18n.t("activerecord.models.client")
+    click_on I18n.t("helpers.submit.update", model: model)
+
+    assert_text I18n.t("flash.message.resource_updated", resource: I18n.t("models.client"))
+    click_on I18n.t("back")
   end
 
   test "should destroy Client" do
     visit account_clients_path(@account)
-    all(:button, "Destroy").last.click
+    all(:button, I18n.t("destroy").last.click
 
-
-    assert_text "Client was successfully deleted"
+    assert_text I18n.t("flash.message.resource_deleted", resource: I18n.t("models.client"))
   end
 
   test "non-logged in user can't see clients" do
@@ -53,6 +56,6 @@ class ClientsTest < ApplicationSystemTestCase
     visit account_clients_path(@account)
 
     assert_text I18n.t("devise.failure.unauthenticated")
-    assert_selector "h2", text: "Login"
+    assert_selector "h2", text: I18n.t("devise.sessions.new.title")
   end
 end

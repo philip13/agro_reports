@@ -5,4 +5,16 @@ es:
   workspaces: "Áreas de trabajo"
   record_no_found: "Registro no encontrado"
   no_authorized: "No está autorizado para realizar esta acción."
-  
+  edit: "Editar"
+  view: "Ver"
+  destroy: "Borrar"
+  back: "Regresar"
+  helpers:
+    submit:
+      create: "Crear %{model}"
+      update: "Actualizar %{model}"
+  flash:
+    message:
+      resource_created: "%{resource} creado correctamente"
+      resource_updated: "%{resource} actualizado correctamente"
+      resource_deleted: "%{resource} eliminado correctamente"

@@ -15,7 +15,7 @@ class SectorsController < ApplicationController
     @sector = Sector.new(sector_params)
     # binding.irb
     if @sector.save
-      redirect_to account_client_path(Current.account, @client), notice: "Sector was successfully created"
+      redirect_to account_client_path(Current.account, @client), notice: t("flash.message.resource_created", resource: t("models.sector"))
     else
       render :new, status: :unprocessable_entity
     end

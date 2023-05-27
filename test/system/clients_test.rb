@@ -5,6 +5,8 @@ class ClientsTest < ApplicationSystemTestCase
     @client = clients(:felipe)
     @user = users(:user1)
     @account = @user.account
+    @model_client = I18n.t("models.client")
+
     sign_in @user
   end
 
@@ -14,17 +16,16 @@ class ClientsTest < ApplicationSystemTestCase
   end
 
   test "should create client" do
-    visit new_account_client_path(@account)
+    visit new_account_client_url(@account)
 
     fill_in "client[first_name]", with: @client.first_name
     fill_in "client[last_name]", with: @client.last_name
     fill_in "client[email]", with: @client.email
     fill_in "client[phone]", with: @client.phone
 
-    model = I18n.t("activerecord.models.client")
-    click_on I18n.t("helpers.submit.create", model: model)
+    click_on I18n.t("helpers.submit.create", model: @model_client.downcase)
 
-    assert_text I18n.t("flash.message.resource_created", resource: I18n.t("models.client"))
+    assert_text I18n.t("flash.message.resource_created", resource: @model_client)
     click_on I18n.t("back")
   end
 
@@ -37,16 +38,15 @@ class ClientsTest < ApplicationSystemTestCase
     fill_in "client[email]", with: @client.email
     fill_in "client[phone]", with: @client.phone
 
-    model = I18n.t("activerecord.models.client")
-    click_on I18n.t("helpers.submit.update", model: model)
+    click_on I18n.t("helpers.submit.update", model: @model_client.downcase)
 
-    assert_text I18n.t("flash.message.resource_updated", resource: I18n.t("models.client"))
+    assert_text I18n.t("flash.message.resource_updated", resource: @model_client)
     click_on I18n.t("back")
   end
 
   test "should destroy Client" do
     visit account_clients_path(@account)
-    all(:button, I18n.t("destroy").last.click
+    all(:button, I18n.t("destroy")).last.click
 
     assert_text I18n.t("flash.message.resource_deleted", resource: I18n.t("models.client"))
   end

@@ -8,6 +8,7 @@ es:
         phone: "Teléfono"
     models:
       client: "cliente"
+      sector: "Sector"
     errors:
       models:
         client:

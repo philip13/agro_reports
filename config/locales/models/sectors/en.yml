@@ -1,0 +1,10 @@
+en:
+  activerecord:
+    attributes:
+      sector:
+        name: "Name"
+        phenological_state: "Phenological state"
+        client_id: "Client"
+        crop_id: "Crop"
+    models:
+      sector: "Sector"

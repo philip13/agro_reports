@@ -1,4 +1,6 @@
 es:
+  models:
+    sector: "Sector"
   sectors:
     index:
       title: "Sectores"

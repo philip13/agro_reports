@@ -19,7 +19,7 @@ class AdminManageSectorsTest < ApplicationSystemTestCase
     visit new_account_client_sector_path(@account, @client)
 
     fill_in "sector[name]", with: "Sector 1"
-    
+
     page.select @berries.name, from: "sector[crop_id]"
     fill_in "sector[phenological_state]", with: "Germinacion"
 

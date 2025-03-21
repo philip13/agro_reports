@@ -1,11 +1,10 @@
 class SectorsController < ApplicationController
   before_action :setup_client
-  before_action :get_clients, only: [ :new, :create ]
+  before_action :get_clients, only: [:new, :create]
 
   def index
     @sectors = Sector.find_by(client_id: @client.id)
   end
-  
 
   def new
     @sector = Sector.new

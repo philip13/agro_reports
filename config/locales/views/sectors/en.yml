@@ -1,0 +1,7 @@
+en:
+  models:
+    sector: "Sector"
+  sectors:
+    index:
+      title: "Sectors"
+      

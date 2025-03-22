@@ -40,7 +40,7 @@ class ClientsControllerTest < ActionDispatch::IntegrationTest
   end
 
   setup do
-    @client = clients(:felipe)
+    @client = clients(:two)
   end
 
   test "should show client" do

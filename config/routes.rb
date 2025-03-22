@@ -4,7 +4,10 @@ Rails.application.routes.draw do
 
   root "accounts#show"
   resources :accounts do
-    resources :clients
+    resources :clients do
+      resources :sectors
+    end
+
     resources :collaborators, only: [:index]
   end
 end
